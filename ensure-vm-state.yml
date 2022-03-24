@@ -94,7 +94,7 @@
             hosts:
               - "{{ vm_name }}"
             validate_certs: false
-            # preserve_existing_hosts: True
+            preserve_existing_hosts: True
           when:
             - use_aap_inventory
             - vm is succeeded
