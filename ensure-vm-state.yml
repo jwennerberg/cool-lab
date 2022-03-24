@@ -23,8 +23,8 @@
 
   tasks:
     - name: when not deleting vm
-      block:
       when: state != 'absent'
+      block:
         - name: Clone the template
           vmware_guest:
             name: "{{ vm_name }}"
