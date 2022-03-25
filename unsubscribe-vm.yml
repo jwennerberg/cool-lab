@@ -26,8 +26,3 @@
       tags: subs
       ignore_errors: true
 
-    - name: get the short name from inventory
-      set_fact:
-        short_name: "{{ inventory_hostname | regex_search('^[^._]*') }}"
-      when: use_inventory_for_hostname
-
