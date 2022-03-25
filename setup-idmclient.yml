@@ -9,8 +9,14 @@
       - ntp.arrowdemo.se
       - time.cloudflare.com
     ipaclient_ssh_trust_dns: true
+    use_inventory_for_hostname: false
 
   tasks:
+
+    - name: Get the short hostname from inventory
+      set_fact:
+        short_name: "{{ inventory_hostname | regex_search('^[^.]*') }}"
+      when: use_inventory_for_hostname
 
     - name: setup hostname
       hostname:
