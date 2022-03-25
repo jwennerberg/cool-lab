@@ -33,7 +33,7 @@
         short_name: "{{ inventory_hostname | regex_search('^[^._]*') }}"
       when: use_inventory_for_hostname
 
-- name: Nuke VM from VMware
+- name: Nuke VM "{{ short_name }}" from VMware
   import_playbook: ensure-vm-state.yml
   vars:
     state: absent
