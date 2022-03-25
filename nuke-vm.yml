@@ -37,7 +37,7 @@
       debug:
         msg: "short hostname: {{ short_name }}"
 
-- name: Nuke VM "{{ short_name }}" from VMware
+- name: "Nuke VM {{ short_name }} from VMware"
   community.vmware.vmware_guest:
     name: "{{ short_name }}"
     state: absent
