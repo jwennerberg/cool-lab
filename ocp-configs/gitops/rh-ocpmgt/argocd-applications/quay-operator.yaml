@@ -11,7 +11,7 @@ spec:
     path: ocp-configs/gitops/rh-ocpmgt/quay-operator/operator/overlays/stable-3.10
   destination:
     server: https://kubernetes.default.svc
-    namespace: quay-operator
+    namespace: openshift-operators
   syncPolicy:
     automated:
       allowEmpty: true
